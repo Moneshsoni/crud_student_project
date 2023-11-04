@@ -1,0 +1,13 @@
+<h1><strong>My Students</strong></h1>
+<hr>
+<h3>List of the Students</h3>
+
+<% @students.each do |student|%>
+  <li>
+   <%= link_to student.name ,student_path(student)%> || <%= link_to 'Update student',edit_student_path(student)%> || <%= button_to 'Delete Student',student_path(student), method: :delete, data: { confirm: 'Are you sure?' }%>
+  
+
+  </li>
+<%end%>
+
+<%= link_to "Create Student", new_student_path%>
